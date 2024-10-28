@@ -1,0 +1,10 @@
+.coverage/
+*.sqlite
+build/
+lib/
+node_modules/
+.env
+junit.xml
+.DS_Store
+.idea/
+.vscode
