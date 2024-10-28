@@ -1,11 +1,10 @@
-import http from 'http';
+import express from 'express';
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200; // Set HTTP status
-  res.setHeader('Content-Type', 'text/plain'); // Set response headers
-  res.end('Hello, World!'); // Send the response body and end the response
+app.get('/', (req, res) => {
+  res.status(200).send('Hello, World!');
 });
 
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
 });

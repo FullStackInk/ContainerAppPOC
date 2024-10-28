@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dapr/dapr": "^3.4.1"
+    "@dapr/dapr": "^3.4.1",
+    "express": "^4.21.1"
   }
 }
