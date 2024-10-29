@@ -6,8 +6,8 @@ const dapr_1 = require("@dapr/dapr");
 // JS SDK does not support Configuration API over HTTP protocol yet
 const communicationProtocol = dapr_1.CommunicationProtocolEnum.GRPC;
 // Initialize Dapr client
-const daprHost = process.env.DAPR_HOST || "https://aca-dev-poc.salmonhill-5bad6e9e.canadacentral.azurecontainerapps.io";
-const daprPort = process.env.DAPR_HTTP_PORT || "3501";
+const daprHost = process.env.DAPR_HOST || "localhost";
+const daprPort = process.env.DAPR_HTTP_PORT || "50001";
 const DAPR_CONFIGURATION_STORE = "appconfigpoc";
 const CONFIGURATION_ITEMS = ["name"];
 // Function to get a configuration value from Azure App Configuration
