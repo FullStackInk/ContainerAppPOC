@@ -6,7 +6,7 @@ import { CommunicationProtocolEnum, DaprClient } from "@dapr/dapr";
 const communicationProtocol = CommunicationProtocolEnum.GRPC;
 
 // Initialize Dapr client
-const daprHost = process.env.DAPR_HOST || "localhost";
+const daprHost = process.env.DAPR_HOST || "https://aca-dev-poc.salmonhill-5bad6e9e.canadacentral.azurecontainerapps.io";
 const daprPort = process.env.DAPR_HTTP_PORT || "3501";
 
 const DAPR_CONFIGURATION_STORE = "appconfigpoc";
