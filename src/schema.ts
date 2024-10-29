@@ -5,6 +5,7 @@ import { CommunicationProtocolEnum, DaprClient } from "@dapr/dapr";
 // JS SDK does not support Configuration API over HTTP protocol yet
 const communicationProtocol = CommunicationProtocolEnum.GRPC;
 
+
 // Initialize Dapr client
 const daprHost = process.env.DAPR_HOST || "localhost";
 const daprPort = process.env.DAPR_HTTP_PORT || "50001";
