@@ -30,7 +30,7 @@ async function getConfigValue(key: any) {
       );
     });
 
-    return config.items[key]
+    return config.items[key].value
 
   } catch (error) {
     console.log("Could not get config item, err:" + error);
