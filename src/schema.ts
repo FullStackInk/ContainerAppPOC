@@ -15,7 +15,7 @@ const CONFIGURATION_ITEMS = ["name"];
 console.log(process.env)
 
 // Function to get a configuration value from Azure App Configuration
-async function getConfigValue() {
+async function getConfigValue(key: any) {
   const client = new DaprClient({ daprHost, daprPort, communicationProtocol });
   // Get config items from the config store
   try {
@@ -29,12 +29,14 @@ async function getConfigValue() {
         JSON.stringify(config.items[key])
       );
     });
+
+    return config.items[key]
+
   } catch (error) {
     console.log("Could not get config item, err:" + error);
   }
 }
 
-getConfigValue();
 
 // Example usage
 // Replace 'myKey' with the actual key in Azure App Configuration
@@ -47,7 +49,7 @@ export const schema = createSchema({
   `,
   resolvers: {
     Query: {
-      hello: () => "World",
+      hello: () => getConfigValue("name"),
     },
   },
 });
