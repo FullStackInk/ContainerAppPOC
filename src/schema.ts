@@ -7,7 +7,7 @@ const communicationProtocol = CommunicationProtocolEnum.GRPC;
 
 // Initialize Dapr client
 const daprHost = process.env.DAPR_HOST || "localhost";
-const daprPort = process.env.DAPR_HTTP_PORT || "3501";
+const daprPort = process.env.DAPR_GRPC_PORT || "3501";
 
 const DAPR_CONFIGURATION_STORE = "appconfigpoc";
 const CONFIGURATION_ITEMS = ["name"];
@@ -16,7 +16,7 @@ console.log(process.env)
 
 // Function to get a configuration value from Azure App Configuration
 async function getConfigValue() {
-  const client = new DaprClient({ daprHost, daprPort });
+  const client = new DaprClient({ daprHost, daprPort, communicationProtocol });
   // Get config items from the config store
   try {
     const config = await client.configuration.get(
